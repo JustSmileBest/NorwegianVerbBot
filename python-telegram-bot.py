@@ -4,9 +4,12 @@ from telegram.ext import Application, CommandHandler, MessageHandler, ContextTyp
 from telegram.ext.filters import Text, Command
 import asyncio
 from datetime import datetime
+import os  # Добавляем импорт os для работы с переменными окружения
 
-# Токен бота от BotFather
-TOKEN = '7353624543:AAGAx6P2e0GE1GDtI3nufuFNeZg0LlYXhqs'
+# Получение токена из переменной окружения
+TOKEN = os.getenv("TOKEN")
+if not TOKEN:
+    raise ValueError("Токен бота не задан. Установите переменную окружения TOKEN.")
 
 # Путь к файлам с данными
 VERBS_FILE_PATH = '1_norwegian_verbs.csv'
