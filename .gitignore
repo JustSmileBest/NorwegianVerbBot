@@ -1,0 +1,7 @@
+*.dll
+*.exe
+*.xlsx
+__pycache__/
+*.pyc
+.idea/
+venv/
